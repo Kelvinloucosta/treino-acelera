@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#0C0D10">
-<title>ACELERA — Treino Futebol</title>
+<title>ACELERA — Treino + Nutrição</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -28,14 +28,18 @@
   .brand .mark{font-family:var(--font-display);font-weight:800;font-size:24px;letter-spacing:.06em;line-height:1;color:var(--text)}
   .brand .mark b{color:var(--accent);font-weight:800}
   .brand .eyebrow{font-family:var(--font-display);font-weight:600;font-size:11px;letter-spacing:.22em;color:var(--faint);text-transform:uppercase;margin-left:auto;align-self:center}
-  .stats{padding:0 18px 12px;font-size:12.5px;color:var(--muted);letter-spacing:.02em;font-variant-numeric:tabular-nums}
+  .stats{padding:0 18px 10px;font-size:12.5px;color:var(--muted);letter-spacing:.02em;font-variant-numeric:tabular-nums}
   .stats b{color:var(--text);font-weight:600}
 
-  nav.days{display:flex;padding:0 8px;gap:2px}
-  nav.days button{flex:1;background:none;border:none;cursor:pointer;font-family:var(--font-display);font-weight:700;font-size:15px;letter-spacing:.08em;color:var(--faint);text-transform:uppercase;padding:11px 2px 12px;position:relative;transition:color .18s}
+  .modeswitch{display:flex;gap:6px;padding:0 18px 10px}
+  .modeswitch button{flex:1;background:var(--surface);border:1px solid var(--line);color:var(--muted);font-family:var(--font-display);font-weight:700;font-size:13px;letter-spacing:.12em;text-transform:uppercase;padding:9px;border-radius:9px;cursor:pointer;transition:all .15s}
+  .modeswitch button.on{background:var(--accent-soft);border-color:var(--accent-line);color:var(--accent)}
+
+  nav.days{display:flex;padding:0 6px;gap:1px}
+  nav.days button{flex:1;background:none;border:none;cursor:pointer;font-family:var(--font-display);font-weight:700;font-size:13.5px;letter-spacing:.05em;color:var(--faint);text-transform:uppercase;padding:11px 1px 12px;position:relative;transition:color .18s}
   nav.days button .dot{display:block;width:5px;height:5px;border-radius:50%;background:var(--line-strong);margin:5px auto 0;transition:background .18s,transform .18s}
   nav.days button.on{color:var(--text)}
-  nav.days button.on::after{content:"";position:absolute;left:18%;right:18%;bottom:0;height:2.5px;background:var(--accent);border-radius:2px}
+  nav.days button.on::after{content:"";position:absolute;left:14%;right:14%;bottom:0;height:2.5px;background:var(--accent);border-radius:2px}
   nav.days button.done .dot{background:var(--accent);transform:scale(1.25)}
 
   .track{height:3px;background:var(--surface2);overflow:hidden}
@@ -53,16 +57,18 @@
   .meter .read{font-family:var(--font-display);font-weight:700;font-variant-numeric:tabular-nums;line-height:.9}
   .meter .read b{font-size:30px;color:var(--text)}
   .meter .read span{font-size:18px;color:var(--faint)}
-  .meter .lbl{font-family:var(--font-display);font-weight:600;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--faint);margin-bottom:3px}
-  .meter .done-flag{margin-left:auto;color:var(--accent);font-family:var(--font-display);font-weight:700;font-size:13px;letter-spacing:.12em;text-transform:uppercase;opacity:0;transition:opacity .25s}
+  .meter .lbl{font-family:var(--font-display);font-weight:600;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--faint);margin-bottom:3px}
+  .meter .done-flag{margin-left:auto;color:var(--accent);font-family:var(--font-display);font-weight:700;font-size:13px;letter-spacing:.1em;text-transform:uppercase;opacity:0;transition:opacity .25s}
   .meter.full .done-flag{opacity:1}
 
-  .daynote{background:var(--surface);border:1px solid var(--line);border-left:2px solid var(--accent);border-radius:10px;padding:10px 13px;margin:14px 0 4px;font-size:13px;color:var(--muted);line-height:1.5}
+  .daynote{background:var(--surface);border:1px solid var(--line);border-left:2px solid var(--accent);border-radius:10px;padding:11px 13px;margin:14px 0 4px;font-size:13px;color:var(--muted);line-height:1.5}
+  .daynote .pt{display:block}
+  .daynote .en{display:block;margin-top:6px;color:var(--faint);font-style:italic}
 
   section.block{margin-top:22px}
   .sechead{display:flex;align-items:center;gap:10px;padding-bottom:9px;margin-bottom:9px;border-bottom:1px solid var(--line)}
   .sechead .t{font-family:var(--font-display);font-weight:700;font-size:14px;letter-spacing:.16em;text-transform:uppercase;color:var(--text)}
-  .sechead .m{margin-left:auto;font-family:var(--font-display);font-weight:600;font-size:12px;letter-spacing:.08em;color:var(--faint);font-variant-numeric:tabular-nums;text-transform:uppercase}
+  .sechead .m{margin-left:auto;font-family:var(--font-display);font-weight:600;font-size:12px;letter-spacing:.06em;color:var(--accent);font-style:italic;text-transform:none}
 
   .exh{display:flex;align-items:center;gap:12px;margin:14px 0 4px}
   .exh .name{flex:1;font-weight:600;font-size:15.5px;color:var(--text);letter-spacing:.005em}
@@ -77,6 +83,8 @@
   .item .toggle .box{flex:none;width:22px;height:22px;border-radius:7px;border:2px solid var(--line-strong);display:grid;place-items:center;transition:all .15s}
   .item .toggle .box svg{width:13px;height:13px;opacity:0;transform:scale(.5);transition:all .15s}
   .item .toggle .txt{font-size:14.5px;line-height:1.35}
+  .item .toggle .txt .pt{display:block}
+  .item .toggle .txt .en{display:block;font-size:12px;color:var(--muted);font-style:italic;margin-top:1px}
   .item.set{margin-left:14px;width:calc(100% - 14px);background:var(--surface2)}
   .item.set .toggle .txt{font-family:var(--font-display);font-weight:600;letter-spacing:.05em;font-size:15px}
   .item:active{transform:scale(.992)}
@@ -89,7 +97,24 @@
   .demo:active{background:var(--accent-soft)}
   .item.checked .demo{border-left-color:var(--accent-line)}
 
-  .item .toggle:focus-visible,.exdemo:focus-visible,.demo:focus-visible,nav.days button:focus-visible,.clear:focus-visible,.resetweek:focus-visible{outline:2px solid var(--accent-bright);outline-offset:2px;border-radius:6px}
+  .meal{background:var(--surface);border:1px solid var(--line);border-radius:13px;margin-top:14px;overflow:hidden}
+  .meal .mh{display:flex;align-items:center;gap:11px;padding:12px 15px;border-bottom:1px solid var(--line);background:var(--surface2)}
+  .meal .mh .ic{font-size:19px;line-height:1}
+  .meal .mh .tt{display:flex;flex-direction:column;gap:1px}
+  .meal .mh .tt .pt{font-family:var(--font-display);font-weight:700;font-size:16px;letter-spacing:.05em;text-transform:uppercase;color:var(--text)}
+  .meal .mh .tt .en{font-size:12px;color:var(--accent);font-style:italic;letter-spacing:.02em}
+  .meal .ml{padding:4px 15px 10px}
+  .mealitem{padding:9px 0;border-bottom:1px solid var(--line)}
+  .mealitem:last-child{border-bottom:none}
+  .mealitem .pt{font-size:14.5px;color:var(--text);line-height:1.35}
+  .mealitem .en{font-size:12.5px;color:var(--muted);font-style:italic;margin-top:2px;line-height:1.3}
+  .meal.hungry{border-color:var(--accent-line)}
+  .meal.hungry .mh{background:var(--accent-soft)}
+  .meal.weekend{border-color:rgba(245,166,35,.38)}
+  .meal.weekend .mh{background:rgba(245,166,35,.12)}
+  .meal.weekend .mh .tt .en{color:#F5A623}
+
+  .item .toggle:focus-visible,.exdemo:focus-visible,.demo:focus-visible,nav.days button:focus-visible,.modeswitch button:focus-visible,.clear:focus-visible,.resetweek:focus-visible{outline:2px solid var(--accent-bright);outline-offset:2px;border-radius:6px}
 
   .actions{display:flex;flex-direction:column;align-items:center;gap:12px;margin-top:32px}
   .clear{background:none;border:1px solid var(--line);color:var(--faint);font-family:var(--font-display);font-weight:600;font-size:13px;letter-spacing:.12em;text-transform:uppercase;padding:9px 18px;border-radius:999px;cursor:pointer;transition:all .15s}
@@ -106,9 +131,10 @@
   <header class="bar">
     <div class="brand">
       <span class="mark">ACELERA<b>.</b></span>
-      <span class="eyebrow">5 dias · futebol</span>
+      <span class="eyebrow">futebol</span>
     </div>
-    <div class="stats"><b>74 kg</b> · <b>1,67 m</b> · <b>34 anos</b> — jogo na segunda</div>
+    <div class="stats"><b>74 kg</b> · <b>1,67 m</b> · <b>34 anos</b> — mais leve, mais rápido</div>
+    <div class="modeswitch" id="modeswitch"></div>
     <nav class="days" id="tabs"></nav>
     <div class="track"><div class="fill" id="stickyfill"></div></div>
   </header>
@@ -116,7 +142,7 @@
 </div>
 
 <script>
-/* ============ PLANO (jogo na segunda) ============ */
+/* ============ PLANO DE TREINO (jogo na segunda) ============ */
 const PLAN = [
   {
     id:"seg", short:"Seg", name:"Segunda", tag:"Jogo + Superior",
@@ -277,13 +303,148 @@ const PLAN = [
   }
 ];
 
+/* ============ PLANO ALIMENTAR (PT + EN) ============ */
+const NUTRI = {
+  options:[
+    {
+      id:"o1", label:"Menu 1",
+      meals:[
+        {icon:"☕", title:{pt:"Café da manhã", en:"Breakfast"}, items:[
+          {pt:"1 pão francês com 2 ovos (mexidos ou cozidos)", en:"1 French bread roll with 2 eggs (scrambled or boiled)"},
+          {pt:"1 fruta (banana ou mamão)", en:"1 fruit (banana or papaya)"},
+          {pt:"Café sem açúcar (ou com adoçante)", en:"Coffee without sugar (or with sweetener)"}
+        ]},
+        {icon:"🍽️", title:{pt:"Almoço", en:"Lunch"}, items:[
+          {pt:"Arroz e feijão (1 concha de cada)", en:"Rice and beans (1 ladle of each)"},
+          {pt:"Frango grelhado (150–200 g)", en:"Grilled chicken (150–200 g)"},
+          {pt:"Salada à vontade + legumes", en:"Salad as much as you want + vegetables"}
+        ]},
+        {icon:"🥪", title:{pt:"Café da tarde", en:"Afternoon snack"}, items:[
+          {pt:"1 pão francês com 1 ovo", en:"1 French bread roll with 1 egg"},
+          {pt:"Café ou chá sem açúcar", en:"Coffee or tea without sugar"}
+        ]},
+        {icon:"🌙", title:{pt:"Janta", en:"Dinner"}, items:[
+          {pt:"Omelete de 3 ovos com legumes", en:"3-egg omelette with vegetables"},
+          {pt:"Salada grande", en:"A big salad"}
+        ]}
+      ]
+    },
+    {
+      id:"o2", label:"Menu 2",
+      meals:[
+        {icon:"☕", title:{pt:"Café da manhã", en:"Breakfast"}, items:[
+          {pt:"1 pão francês com 2 ovos mexidos", en:"1 French bread roll with 2 scrambled eggs"},
+          {pt:"1 fatia de queijo branco", en:"1 slice of white cheese"},
+          {pt:"Café sem açúcar", en:"Coffee without sugar"}
+        ]},
+        {icon:"🍽️", title:{pt:"Almoço", en:"Lunch"}, items:[
+          {pt:"Batata-doce cozida (1 média)", en:"Boiled sweet potato (1 medium)"},
+          {pt:"Carne magra, ex. patinho (150 g)", en:"Lean beef, e.g. rump (150 g)"},
+          {pt:"Brócolis + salada", en:"Broccoli + salad"}
+        ]},
+        {icon:"🥪", title:{pt:"Café da tarde", en:"Afternoon snack"}, items:[
+          {pt:"1 pão francês com 1 ovo", en:"1 French bread roll with 1 egg"},
+          {pt:"1 fruta", en:"1 fruit"}
+        ]},
+        {icon:"🌙", title:{pt:"Janta", en:"Dinner"}, items:[
+          {pt:"Frango desfiado", en:"Shredded chicken"},
+          {pt:"Legumes assados (abóbora, cenoura)", en:"Roasted vegetables (squash, carrot)"},
+          {pt:"Salada", en:"Salad"}
+        ]}
+      ]
+    },
+    {
+      id:"o3", label:"Menu 3",
+      meals:[
+        {icon:"☕", title:{pt:"Café da manhã", en:"Breakfast"}, items:[
+          {pt:"1 pão francês com 2 ovos", en:"1 French bread roll with 2 eggs"},
+          {pt:"1/2 abacate (ou tomate)", en:"1/2 avocado (or tomato)"},
+          {pt:"Café sem açúcar", en:"Coffee without sugar"}
+        ]},
+        {icon:"🍽️", title:{pt:"Almoço", en:"Lunch"}, items:[
+          {pt:"Arroz integral e feijão", en:"Brown rice and beans"},
+          {pt:"Peixe grelhado (tilápia) ou sardinha", en:"Grilled fish (tilapia) or sardines"},
+          {pt:"Salada + legumes", en:"Salad + vegetables"}
+        ]},
+        {icon:"🥪", title:{pt:"Café da tarde", en:"Afternoon snack"}, items:[
+          {pt:"1 pão francês com 1 ovo", en:"1 French bread roll with 1 egg"},
+          {pt:"1 iogurte natural", en:"1 plain yogurt"}
+        ]},
+        {icon:"🌙", title:{pt:"Janta", en:"Dinner"}, items:[
+          {pt:"Sopa de legumes com frango desfiado", en:"Vegetable soup with shredded chicken"},
+          {pt:"(ou) Omelete recheado + salada", en:"(or) Stuffed omelette + salad"}
+        ]}
+      ]
+    }
+  ],
+  hunger:[
+    {pt:"1 fruta (maçã, banana ou laranja)", en:"1 fruit (apple, banana or orange)"},
+    {pt:"1 iogurte natural sem açúcar", en:"1 plain yogurt, no sugar"},
+    {pt:"1 ovo cozido", en:"1 boiled egg"},
+    {pt:"Punhado pequeno de castanhas", en:"A small handful of nuts"},
+    {pt:"Cenoura ou pepino em palitos", en:"Carrot or cucumber sticks"},
+    {pt:"Café, chá ou bastante água", en:"Coffee, tea or plenty of water"}
+  ],
+  weekend:[
+    {pt:"Pode comer seu lanche (hambúrguer, pizza, o que curtir) 1 vez no fim de semana.", en:"You can have your treat (burger, pizza, whatever you like) once on the weekend."},
+    {pt:"Faça disso UMA refeição — não o fim de semana inteiro.", en:"Make it ONE meal — not the whole weekend."},
+    {pt:"Coma com calma e sem culpa: faz parte do plano.", en:"Eat slowly and without guilt: it is part of the plan."},
+    {pt:"Dica: no almoço desse dia, vá mais leve (proteína + salada).", en:"Tip: keep that day's lunch lighter (protein + salad)."},
+    {pt:"Se for refrigerante, prefira a versão zero; e capriche na água.", en:"If you have soda, go for the zero/diet one; and drink plenty of water."},
+    {pt:"Na próxima refeição, volta ao normal. Uma refeição não desfaz a semana.", en:"At the next meal, back to normal. One meal won't undo the week."}
+  ],
+  shopping:[
+    {cat:{pt:"Proteínas", en:"Proteins"}, items:[
+      {pt:"Ovos (2–3 dúzias)", en:"Eggs (2–3 dozen)"},
+      {pt:"Peito de frango", en:"Chicken breast"},
+      {pt:"Carne magra (patinho)", en:"Lean beef (rump)"},
+      {pt:"Peixe (tilápia) ou sardinha em lata", en:"Fish (tilapia) or canned sardines"},
+      {pt:"Queijo branco", en:"White cheese"},
+      {pt:"Iogurte natural", en:"Plain yogurt"}
+    ]},
+    {cat:{pt:"Carboidratos", en:"Carbs"}, items:[
+      {pt:"Pão francês", en:"French bread rolls"},
+      {pt:"Arroz", en:"Rice"},
+      {pt:"Arroz integral", en:"Brown rice"},
+      {pt:"Feijão", en:"Beans"},
+      {pt:"Batata-doce", en:"Sweet potato"}
+    ]},
+    {cat:{pt:"Frutas", en:"Fruit"}, items:[
+      {pt:"Banana", en:"Banana"},
+      {pt:"Mamão", en:"Papaya"},
+      {pt:"Maçã", en:"Apple"},
+      {pt:"Laranja", en:"Orange"},
+      {pt:"Abacate", en:"Avocado"}
+    ]},
+    {cat:{pt:"Legumes e verduras", en:"Vegetables & greens"}, items:[
+      {pt:"Folhas para salada (alface, rúcula)", en:"Salad greens (lettuce, arugula)"},
+      {pt:"Tomate", en:"Tomato"},
+      {pt:"Brócolis", en:"Broccoli"},
+      {pt:"Abóbora", en:"Squash"},
+      {pt:"Cenoura", en:"Carrot"},
+      {pt:"Pepino", en:"Cucumber"},
+      {pt:"Cebola", en:"Onion"}
+    ]},
+    {cat:{pt:"Extras", en:"Extras"}, items:[
+      {pt:"Castanhas (mix)", en:"Nuts (mixed)"},
+      {pt:"Azeite", en:"Olive oil"},
+      {pt:"Café", en:"Coffee"},
+      {pt:"Adoçante (opcional)", en:"Sweetener (optional)"}
+    ]}
+  ]
+};
+
 /* ============ ESTADO (localStorage à prova de falha) ============ */
 const SKEY = "acelera.v2";
 let state = {};
 (function load(){ try{ const r=localStorage.getItem(SKEY); if(r) state=JSON.parse(r)||{}; }catch(e){ state={}; } })();
 function save(){ try{ localStorage.setItem(SKEY, JSON.stringify(state)); }catch(e){} }
-let active = PLAN[0].id;
 
+let mode = "treino";
+let activeDay = PLAN[0].id;
+let activeNutri = "o1";
+
+function curDay(){ return PLAN.find(d=>d.id===activeDay); }
 function leafKeys(day){
   const ks=[];
   day.sections.forEach((sec,si)=>{ sec.items.forEach((it,ii)=>{
@@ -296,30 +457,69 @@ function dayProgress(day){
   const ks=leafKeys(day), done=ks.filter(k=>state[k]).length;
   return {done, total:ks.length, pct: ks.length? Math.round(done/ks.length*100):0};
 }
+function shopKeys(){
+  const ks=[];
+  NUTRI.shopping.forEach((cat,ci)=>cat.items.forEach((it,ii)=>ks.push("shop."+ci+"."+ii)));
+  return ks;
+}
+function shopProgress(){
+  const ks=shopKeys(), done=ks.filter(k=>state[k]).length;
+  return {done, total:ks.length, pct: ks.length? Math.round(done/ks.length*100):0};
+}
+function headerPct(){
+  if(mode==="treino") return dayProgress(curDay()).pct;
+  if(activeNutri==="shop") return shopProgress().pct;
+  return 0;
+}
 function demoURL(q){ return "https://www.youtube.com/results?search_query="+encodeURIComponent(q); }
 
 const CHECK='<svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#0C0D10" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
 const PLAY='<svg class="play" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9.3" stroke="currentColor" stroke-width="1.6"/><path d="M10.2 8.5l5 3.5-5 3.5z" fill="currentColor"/></svg>';
 
-function syncMeters(){
-  const day=PLAN.find(d=>d.id===active), p=dayProgress(day);
-  document.getElementById("stickyfill").style.width=p.pct+"%";
+function afterToggle(){
+  document.getElementById("stickyfill").style.width=headerPct()+"%";
   const read=document.querySelector(".meter .read");
-  if(read) read.innerHTML="<b>"+p.done+"</b><span>/"+p.total+"</span>";
-  const m=document.querySelector(".meter"); if(m) m.classList.toggle("full",p.total&&p.done===p.total);
-  renderTabs();
+  if(read){
+    const p = (mode==="treino") ? dayProgress(curDay()) : shopProgress();
+    read.innerHTML="<b>"+p.done+"</b><span>/"+p.total+"</span>";
+    const m=document.querySelector(".meter"); if(m) m.classList.toggle("full",p.total&&p.done===p.total);
+  }
+  renderNav();
 }
 
-function renderTabs(){
-  const nav=document.getElementById("tabs"); nav.innerHTML="";
-  PLAN.forEach(day=>{
-    const p=dayProgress(day), b=document.createElement("button");
-    b.className=(day.id===active?"on ":"")+(p.total&&p.done===p.total?"done":"");
-    b.innerHTML=day.short.toUpperCase()+'<span class="dot"></span>';
-    b.setAttribute("aria-label",day.name);
-    b.onclick=()=>{active=day.id;render();window.scrollTo({top:0});};
-    nav.appendChild(b);
+function renderModeSwitch(){
+  const ms=document.getElementById("modeswitch"); ms.innerHTML="";
+  [["treino","Treino"],["nutri","Nutrição"]].forEach(function(pair){
+    const b=document.createElement("button");
+    b.className=(mode===pair[0]?"on":""); b.textContent=pair[1];
+    b.onclick=function(){ mode=pair[0]; render(); window.scrollTo({top:0}); };
+    ms.appendChild(b);
   });
+}
+
+function renderNav(){
+  const nav=document.getElementById("tabs"); nav.innerHTML="";
+  if(mode==="treino"){
+    PLAN.forEach(day=>{
+      const p=dayProgress(day), b=document.createElement("button");
+      b.className=(day.id===activeDay?"on ":"")+(p.total&&p.done===p.total?"done":"");
+      b.innerHTML=day.short.toUpperCase()+'<span class="dot"></span>';
+      b.setAttribute("aria-label",day.name);
+      b.onclick=()=>{activeDay=day.id;render();window.scrollTo({top:0});};
+      nav.appendChild(b);
+    });
+  } else {
+    const opts=[["o1","Menu 1"],["o2","Menu 2"],["o3","Menu 3"],["shop","Lista"]];
+    const sp=shopProgress();
+    opts.forEach(function(o){
+      const b=document.createElement("button");
+      const done=(o[0]==="shop")&&sp.total&&sp.done===sp.total;
+      b.className=(o[0]===activeNutri?"on ":"")+(done?"done":"");
+      b.innerHTML=o[1].toUpperCase()+'<span class="dot"></span>';
+      b.onclick=function(){ activeNutri=o[0]; render(); window.scrollTo({top:0}); };
+      nav.appendChild(b);
+    });
+  }
 }
 
 function makeRow(key,label,isSet,q){
@@ -332,7 +532,7 @@ function makeRow(key,label,isSet,q){
     state[key]=!state[key]; if(!state[key]) delete state[key]; save();
     wrap.classList.toggle("checked");
     t.setAttribute("aria-pressed",wrap.classList.contains("checked")?"true":"false");
-    syncMeters();
+    afterToggle();
   };
   wrap.appendChild(t);
   if(q){
@@ -344,12 +544,9 @@ function makeRow(key,label,isSet,q){
   return wrap;
 }
 
-function render(){
-  renderTabs();
-  const day=PLAN.find(d=>d.id===active), p=dayProgress(day);
-  document.getElementById("stickyfill").style.width=p.pct+"%";
-  const app=document.getElementById("app"); app.innerHTML="";
-
+/* ---------- TREINO ---------- */
+function renderTreino(app){
+  const day=curDay(), p=dayProgress(day);
   const head=document.createElement("div"); head.className="dayhead";
   head.innerHTML='<span class="tag">'+day.tag+'</span><h1>'+day.name+'</h1>'
     +'<p class="sub">'+day.subtitle+'</p>'
@@ -361,9 +558,7 @@ function render(){
   meter.innerHTML='<div><div class="lbl">Carga do dia</div><div class="read"><b>'+p.done+'</b><span>/'+p.total+'</span></div></div><div class="done-flag">Dia completo ⚡</div>';
   app.appendChild(meter);
 
-  if(day.note){
-    const n=document.createElement("div"); n.className="daynote"; n.textContent=day.note; app.appendChild(n);
-  }
+  if(day.note){ const n=document.createElement("div"); n.className="daynote"; n.textContent=day.note; app.appendChild(n); }
 
   day.sections.forEach((sec,si)=>{
     const block=document.createElement("section"); block.className="block";
@@ -394,12 +589,92 @@ function render(){
   clr.onclick=()=>{ leafKeys(day).forEach(k=>delete state[k]); save(); render(); };
   const rw=document.createElement("button"); rw.className="resetweek"; rw.textContent="Resetar a semana inteira";
   rw.onclick=()=>{
-    let ok=true; try{ ok=confirm("Apagar todas as marcações dos 5 dias?"); }catch(e){ ok=true; }
-    if(!ok) return; state={}; save(); render();
+    let ok=true; try{ ok=confirm("Apagar todas as marcações do treino (5 dias)?"); }catch(e){ ok=true; }
+    if(!ok) return; PLAN.forEach(d=>leafKeys(d).forEach(k=>delete state[k])); save(); render();
   };
   actions.appendChild(clr); actions.appendChild(rw); app.appendChild(actions);
 
   const f=document.createElement("div"); f.className="foot"; f.textContent="Progresso salvo neste aparelho"; app.appendChild(f);
+}
+
+/* ---------- NUTRIÇÃO ---------- */
+function mealCard(m){
+  const c=document.createElement("div"); c.className="meal";
+  c.innerHTML='<div class="mh"><span class="ic">'+m.icon+'</span><span class="tt"><span class="pt">'+m.title.pt+'</span><span class="en">'+m.title.en+'</span></span></div>';
+  const ml=document.createElement("div"); ml.className="ml";
+  m.items.forEach(it=>{ const r=document.createElement("div"); r.className="mealitem"; r.innerHTML='<div class="pt">'+it.pt+'</div><div class="en">'+it.en+'</div>'; ml.appendChild(r); });
+  c.appendChild(ml); return c;
+}
+function hungerCard(){
+  const c=document.createElement("div"); c.className="meal hungry";
+  c.innerHTML='<div class="mh"><span class="ic">🍎</span><span class="tt"><span class="pt">Se bater a fome</span><span class="en">If you get hungry</span></span></div>';
+  const ml=document.createElement("div"); ml.className="ml";
+  NUTRI.hunger.forEach(it=>{ const r=document.createElement("div"); r.className="mealitem"; r.innerHTML='<div class="pt">'+it.pt+'</div><div class="en">'+it.en+'</div>'; ml.appendChild(r); });
+  c.appendChild(ml); return c;
+}
+function weekendCard(){
+  const c=document.createElement("div"); c.className="meal weekend";
+  c.innerHTML='<div class="mh"><span class="ic">🍔</span><span class="tt"><span class="pt">Fim de semana — livre</span><span class="en">Weekend — free meal</span></span></div>';
+  const ml=document.createElement("div"); ml.className="ml";
+  NUTRI.weekend.forEach(it=>{ const r=document.createElement("div"); r.className="mealitem"; r.innerHTML='<div class="pt">'+it.pt+'</div><div class="en">'+it.en+'</div>'; ml.appendChild(r); });
+  c.appendChild(ml); return c;
+}
+function renderMealOption(app,opt){
+  const head=document.createElement("div"); head.className="dayhead";
+  head.innerHTML='<span class="tag">Nutrição</span><h1>'+opt.label+'</h1>'
+    +'<p class="sub">Café, almoço, café da tarde e janta · Breakfast, lunch, snack &amp; dinner</p>';
+  app.appendChild(head);
+
+  const note=document.createElement("div"); note.className="daynote";
+  note.innerHTML='<span class="pt">Foco em proteína e vegetais, porções moderadas — sem contar caloria. A perda de gordura vem mais da comida do que do treino. Beba bastante água. Não sou nutricionista; para algo sob medida, procure um.</span>'
+    +'<span class="en">Focus on protein and vegetables, moderate portions — no calorie counting. Fat loss comes more from food than training. Drink plenty of water. I am not a dietitian; for a tailored plan, see one.</span>';
+  app.appendChild(note);
+
+  opt.meals.forEach(m=> app.appendChild(mealCard(m)));
+  app.appendChild(hungerCard());
+  app.appendChild(weekendCard());
+
+  const f=document.createElement("div"); f.className="foot"; f.textContent="Pão francês com ovo no café e na tarde, do seu jeito"; app.appendChild(f);
+}
+function renderShopping(app){
+  const head=document.createElement("div"); head.className="dayhead";
+  head.innerHTML='<span class="tag">Nutrição</span><h1>Lista de compras</h1>'
+    +'<p class="sub">Shopping list · marque o que já comprou · check off what you bought</p>';
+  app.appendChild(head);
+
+  const p=shopProgress();
+  const meter=document.createElement("div"); meter.className="meter"+(p.total&&p.done===p.total?" full":"");
+  meter.innerHTML='<div><div class="lbl">Comprado · bought</div><div class="read"><b>'+p.done+'</b><span>/'+p.total+'</span></div></div><div class="done-flag">Tudo comprado ✓</div>';
+  app.appendChild(meter);
+
+  NUTRI.shopping.forEach((cat,ci)=>{
+    const block=document.createElement("section"); block.className="block";
+    const sh=document.createElement("div"); sh.className="sechead";
+    sh.innerHTML='<span class="t">'+cat.cat.pt+'</span><span class="m">'+cat.cat.en+'</span>';
+    block.appendChild(sh);
+    cat.items.forEach((it,ii)=>{
+      const label='<span class="pt">'+it.pt+'</span><span class="en">'+it.en+'</span>';
+      block.appendChild(makeRow("shop."+ci+"."+ii,label,false,null));
+    });
+    app.appendChild(block);
+  });
+
+  const actions=document.createElement("div"); actions.className="actions";
+  const clr=document.createElement("button"); clr.className="clear"; clr.textContent="Limpar lista de compras";
+  clr.onclick=()=>{ shopKeys().forEach(k=>delete state[k]); save(); render(); };
+  actions.appendChild(clr); app.appendChild(actions);
+
+  const f=document.createElement("div"); f.className="foot"; f.textContent="Progresso salvo neste aparelho"; app.appendChild(f);
+}
+
+function render(){
+  renderModeSwitch();
+  renderNav();
+  document.getElementById("stickyfill").style.width=headerPct()+"%";
+  const app=document.getElementById("app"); app.innerHTML="";
+  if(mode==="treino"){ renderTreino(app); }
+  else if(activeNutri==="shop"){ renderShopping(app); }
+  else { renderMealOption(app, NUTRI.options.find(o=>o.id===activeNutri)); }
 }
 
 render();
