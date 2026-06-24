@@ -201,29 +201,22 @@ const PLAN = [
     ]
   },
   {
-    id:"qua", short:"Qua", name:"Quarta", tag:"Velocidade",
-    subtitle:"Velocidade, agilidade e condicionamento",
-    note:"Pernas já recuperadas do jogo de segunda. Aqui é tiro FRESCO e de qualidade — recupera totalmente entre cada um. Aquecimento caprichado protege o posterior; aos 34 é onde mais estira.",
+    id:"qua", short:"Qua", name:"Quarta", tag:"Intervalado",
+    subtitle:"Esteira ou bike — velocidade e queima",
+    note:"Pernas já recuperadas do jogo de segunda. É simples: na esteira (ou na bike) você alterna um trecho FORTE e curto com um trecho LEVE pra recuperar, e repete. Acelera no forte, anda/pedala devagar no leve. Capricha no aquecimento pra proteger o posterior; aos 34 é onde mais estira.",
     sections:[
-      {title:"Aquecimento", meta:"10 min", items:[
-        {t:"4 min trote leve"},
-        {t:"Joelho alto — 20", q:"joelho alto high knees"},
-        {t:"Calcanhar no glúteo — 20", q:"calcanhar no glúteo butt kicks"},
-        {t:"Mobilidade de quadril — 10/lado", q:"mobilidade de quadril aquecimento"},
-        {t:"A-skips — 2×20m", q:"A-skips técnica corrida"},
-        {t:"Tiros progressivos (trote → ~80%) — 3×", q:"tiros progressivos build up aquecimento corrida"}
+      {title:"Aquecimento", meta:"6 min", items:[
+        {t:"Esteira ou bike: comece bem leve e suba o ritmo aos poucos — 5 min"},
+        {t:"Mobilidade de quadril — 10/lado", q:"mobilidade de quadril aquecimento"}
       ]},
-      {title:"Treino", items:[
-        {ex:"A. Tiros retos", reps:"6–8 × 20–30m", note:"recuperação TOTAL · andar de volta (~60–90s) · máximo esforço", sets:8, q:"treino de sprint velocidade corrida"},
-        {ex:"B. Tiro 5-10-5 com cone", reps:"4–6×", note:"5m ida, 10m volta, 5m — agilidade e corte", sets:6, q:"5-10-5 pro agility drill cones"},
-        {ex:"C. Ziguezague com corte (cones)", reps:"4×", sets:4, q:"exercício agilidade ziguezague cones futebol"},
-        {ex:"D. Tiros curtos — condicionamento", reps:"6–8 ×", note:"20s forte / 40s descanso · motor de secar", sets:8, q:"treino tiros curtos condicionamento corrida"},
-        {ex:"Core — Mountain climber", reps:"3 × 30s", sets:3, q:"mountain climber exercício"}
+      {title:"Parte principal — tiros", items:[
+        {ex:"Tiro forte + recuperação", reps:"8 a 10×", note:"cada volta = 30s FORTE (corrida ou pedalada acelerada, ~80%) + 90s LEVE (anda/pedala devagar). Marque 1 quadradinho por volta.", sets:10, q:"treino intervalado esteira HIIT iniciante"},
+        {ex:"Core — Prancha", reps:"3 × 40s", sets:3, q:"prancha abdominal correta"}
       ]},
       {title:"Desaquecimento", meta:"5 min", items:[
-        {t:"Caminhada leve — 3 min"},
-        {t:"Alongar flexor do quadril — 45s/lado", q:"alongamento flexor do quadril"},
-        {t:"Alongar posterior — 1 min", q:"alongamento posterior da coxa"}
+        {t:"Esteira ou bike bem leve — 3 min"},
+        {t:"Alongar posterior — 1 min", q:"alongamento posterior da coxa"},
+        {t:"Alongar flexor do quadril — 45s/lado", q:"alongamento flexor do quadril"}
       ]}
     ]
   },
@@ -468,7 +461,7 @@ function shopProgress(){
 }
 function headerPct(){
   if(mode==="treino") return dayProgress(curDay()).pct;
-  if(activeNutri==="shop") return shopProgress().pct;
+  if(mode==="nutri" && activeNutri==="shop") return shopProgress().pct;
   return 0;
 }
 function demoURL(q){ return "https://www.youtube.com/results?search_query="+encodeURIComponent(q); }
@@ -489,7 +482,7 @@ function afterToggle(){
 
 function renderModeSwitch(){
   const ms=document.getElementById("modeswitch"); ms.innerHTML="";
-  [["treino","Treino"],["nutri","Nutrição"]].forEach(function(pair){
+  [["treino","Treino"],["bike","Bike"],["nutri","Nutrição"]].forEach(function(pair){
     const b=document.createElement("button");
     b.className=(mode===pair[0]?"on":""); b.textContent=pair[1];
     b.onclick=function(){ mode=pair[0]; render(); window.scrollTo({top:0}); };
@@ -499,6 +492,7 @@ function renderModeSwitch(){
 
 function renderNav(){
   const nav=document.getElementById("tabs"); nav.innerHTML="";
+  if(mode==="bike"){ return; }
   if(mode==="treino"){
     PLAN.forEach(day=>{
       const p=dayProgress(day), b=document.createElement("button");
@@ -667,12 +661,67 @@ function renderShopping(app){
   const f=document.createElement("div"); f.className="foot"; f.textContent="Progresso salvo neste aparelho"; app.appendChild(f);
 }
 
+function infoCard(icon,title,items,cls){
+  const c=document.createElement("div"); c.className="meal"+(cls?" "+cls:"");
+  c.innerHTML='<div class="mh"><span class="ic">'+icon+'</span><span class="tt"><span class="pt">'+title+'</span></span></div>';
+  const ml=document.createElement("div"); ml.className="ml";
+  items.forEach(function(it){ const r=document.createElement("div"); r.className="mealitem"; r.innerHTML='<div class="pt">'+it+'</div>'; ml.appendChild(r); });
+  c.appendChild(ml); return c;
+}
+function renderBike(app){
+  const head=document.createElement("div"); head.className="dayhead";
+  head.innerHTML='<span class="tag">Bike</span><h1>Bike em casa</h1><p class="sub">Pedal diário pra secar</p>';
+  app.appendChild(head);
+
+  const note=document.createElement("div"); note.className="daynote";
+  note.textContent="Bike simples já resolve. Regra de ouro: a maioria dos dias é LEVE ou MODERADO — não precisa se matar todo dia. Pedalar quase todo dia, mesmo de leve, é o que seca no longo prazo. Em dia de perna pesada na academia, deixe o pedal levinho; vale como recuperação.";
+  app.appendChild(note);
+
+  app.appendChild(infoCard("🎚️","Como medir a intensidade",[
+    "Leve — dá pra conversar tranquilo.",
+    "Moderado — respiração firme, você fala só frases curtas.",
+    "Forte — fica difícil falar.",
+    "Bike sem marcador? Vá pela respiração e aumente a resistência se estiver fácil demais."
+  ]));
+
+  app.appendChild(infoCard("🚲","Treino do dia — versão fácil (~30 min)",[
+    "5 min leve (aquecimento).",
+    "20 min moderado e constante.",
+    "5 min leve (desaquecimento).",
+    "É essa a versão pra fazer na maioria dos dias."
+  ]));
+
+  app.appendChild(infoCard("⚡","Pra variar — intervalado (~25 min)",[
+    "5 min leve.",
+    "10 a 12 vezes: 1 min FORTE + 1 min leve.",
+    "5 min leve.",
+    "Use 1 ou 2 vezes na semana, nos dias mais tranquilos."
+  ]));
+
+  app.appendChild(infoCard("🗓️","Como encaixar com a academia",[
+    "Mire 5 a 6 dias na semana e descanse pelo menos 1.",
+    "Quinta (perna pesada) e logo após o jogo (segunda/terça): só leve, 15–20 min.",
+    "Dias mais leves: pode usar a versão intervalada.",
+    "Muito cansado ou dolorido? Pula sem culpa — descanso também seca."
+  ]));
+
+  app.appendChild(infoCard("💡","Dicas rápidas",[
+    "Ajuste o banco na altura do quadril (joelho quase esticado lá embaixo).",
+    "Comece com o tempo que aguentar (15–20 min) e suba aos poucos.",
+    "Tenha água por perto e, se der, um ventilador.",
+    "O que seca é a soma da semana + a comida, não um pedal heroico num dia só."
+  ]));
+
+  const f=document.createElement("div"); f.className="foot"; f.textContent="Constância vale mais que intensidade. Pedalou hoje? Já valeu."; app.appendChild(f);
+}
+
 function render(){
   renderModeSwitch();
   renderNav();
   document.getElementById("stickyfill").style.width=headerPct()+"%";
   const app=document.getElementById("app"); app.innerHTML="";
   if(mode==="treino"){ renderTreino(app); }
+  else if(mode==="bike"){ renderBike(app); }
   else if(activeNutri==="shop"){ renderShopping(app); }
   else { renderMealOption(app, NUTRI.options.find(o=>o.id===activeNutri)); }
 }
