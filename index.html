@@ -305,46 +305,20 @@ const PLAN = [
   },
   {
     id:"casa", short:"Casa", name:"Plano B em casa", tag:"Em casa",
-    subtitle:"Quando faltar a academia — corpo + bike",
-    note:"Plano B pra quando não der pra ir à academia. Cobre o mesmo que a sexta (corpo todo + queima) e é amigo do joelho: agachamento só até onde não incomodar e nada de salto. A bike entra no aquecimento e, se quiser, no fim. São 4 voltas: 40s em cada exercício, 20s de descanso entre eles, e ~90s de descanso entre as voltas.",
+    subtitle:"Bike + flexão e agachamento",
+    note:"Plano B sem academia, só com a bike e o peso do corpo em pé — nada de exercício no chão. É flexão, agachamento e um circuito na bike pra queimar. Amigo do joelho: agachamento só até onde não incomodar, sem salto; pra forçar mais, vá pela descida lenta, não por carga.",
     sections:[
       {title:"Aquecimento", meta:"5 min", items:[
         {t:"Bike bem leve, subindo o ritmo aos poucos — 5 min"}
       ]},
-      {title:"Volta 1", items:[
-        {t:"Ponte de glúteo — 40s", q:"ponte de glúteo glute bridge"},
-        {t:"Flexão de braço (pode apoiar no sofá ou na parede) — 40s", q:"flexão de braço técnica correta"},
-        {t:"Agachamento controlado, sem salto — 40s", q:"agachamento livre peso corporal"},
-        {t:"Superman (deita de bruços e levanta peito e pernas) — 40s", q:"superman exercício lombar"},
-        {t:"Mountain climber — 40s", q:"mountain climber exercício"},
-        {t:"Prancha — 40s", q:"prancha abdominal correta"}
+      {title:"Força — peso do corpo", items:[
+        {ex:"Flexão de braço", reps:"4 × 40s", note:"até onde aguentar com forma boa; pode apoiar as mãos no sofá ou na parede pra facilitar", sets:4, q:"flexão de braço técnica correta"},
+        {ex:"Agachamento (lento e fundo)", reps:"4 × 50s", note:"desça devagar (uns 3s) e vá fundo, até onde NÃO doer o joelho. Pra forçar mais: pausa de 2s lá embaixo, ou meia-repetição extra (desce, sobe até a metade, desce de novo, sobe tudo)", sets:4, q:"agachamento livre peso corporal"}
       ]},
-      {title:"Volta 2", items:[
-        {t:"Ponte de glúteo — 40s", q:"ponte de glúteo glute bridge"},
-        {t:"Flexão de braço — 40s", q:"flexão de braço técnica correta"},
-        {t:"Agachamento controlado, sem salto — 40s", q:"agachamento livre peso corporal"},
-        {t:"Superman — 40s", q:"superman exercício lombar"},
-        {t:"Mountain climber — 40s", q:"mountain climber exercício"},
-        {t:"Prancha — 40s", q:"prancha abdominal correta"}
-      ]},
-      {title:"Volta 3", items:[
-        {t:"Ponte de glúteo — 40s", q:"ponte de glúteo glute bridge"},
-        {t:"Flexão de braço — 40s", q:"flexão de braço técnica correta"},
-        {t:"Agachamento controlado, sem salto — 40s", q:"agachamento livre peso corporal"},
-        {t:"Superman — 40s", q:"superman exercício lombar"},
-        {t:"Mountain climber — 40s", q:"mountain climber exercício"},
-        {t:"Prancha — 40s", q:"prancha abdominal correta"}
-      ]},
-      {title:"Volta 4", items:[
-        {t:"Ponte de glúteo — 40s", q:"ponte de glúteo glute bridge"},
-        {t:"Flexão de braço — 40s", q:"flexão de braço técnica correta"},
-        {t:"Agachamento controlado, sem salto — 40s", q:"agachamento livre peso corporal"},
-        {t:"Superman — 40s", q:"superman exercício lombar"},
-        {t:"Mountain climber — 40s", q:"mountain climber exercício"},
-        {t:"Prancha — 40s", q:"prancha abdominal correta"}
-      ]},
-      {title:"Finalizador na bike — opcional", items:[
-        {ex:"Tiro 30s forte + 1 min leve", reps:"6×", note:"opcional — pula se já estiver cansado. Na bike: 30s forte + 1 min leve, repete 6 vezes.", sets:6, q:"treino intervalado bike HIIT"}
+      {title:"Circuito na bike", items:[
+        {ex:"Bloco 1 — 40s forte / 20s leve", reps:"5×", note:"5 voltas de 40s forte + 20s leve. Depois recupere 2 min pedalando bem leve.", sets:5, q:"treino intervalado bike HIIT"},
+        {ex:"Bloco 2 — tiros de 20s", reps:"6×", note:"6 voltas de 20s no SPRINT (o mais forte que der) + 40s leve. Depois 1 min leve.", sets:6, q:"sprint bike treino"},
+        {t:"Final: 3 min moderado-forte constante (apertado, mas sem ser sprint)"}
       ]},
       {title:"Desaquecimento", meta:"5 min", items:[
         {t:"Bike bem leve — 3 min"},
